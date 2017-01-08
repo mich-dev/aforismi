@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Aforismi</string>
+    <string name="action_settings">Settings</string>
+    <string name="parse_html"> </string>
+    <string name="html_button">Click to get HTML Page Title</string>
+    <string name="titolo_per_alfabeto">Lista per autori</string>
+    <string name="titolo_per_autori">Lista per lettera selezionata</string>
+    <string name="title_activity_authors_list">AuthorsListActivity</string>
+    <string name="title_activity_quotes_list">QuotesListActivity</string>
+    <string name="titolo_battute">Aforismi/Battute</string>
+</resources>

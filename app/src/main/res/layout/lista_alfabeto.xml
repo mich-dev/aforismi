@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app2="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text=""
+        android:id="@+id/titolo_alfabeto"
+        android:gravity="center"
+        android:textColor="#232859"
+        android:textSize="30sp"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app2:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        app2:layout_constraintLeft_toLeftOf="parent"
+        app2:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline3"
+        app2:layout_constraintGuide_begin="20dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="20dp" />
+
+    <ListView
+        android:layout_width="0dp"
+        android:id="@+id/lista_alfabeto"
+        tools:layout_constraintRight_creator="1"
+        app2:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        app2:layout_constraintLeft_toLeftOf="parent"
+        app2:layout_constraintTop_toBottomOf="@+id/titolo_alfabeto"
+        android:layout_marginTop="8dp"
+        app2:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="16dp"
+        android:layout_height="0dp" />
+</android.support.constraint.ConstraintLayout>
