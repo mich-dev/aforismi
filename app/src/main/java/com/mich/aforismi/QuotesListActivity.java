@@ -34,7 +34,7 @@ public class QuotesListActivity extends AppCompatActivity implements IBattuteRes
         autore = (String) getIntent().getSerializableExtra("scelta");
 
         listaBattute = (ListView) findViewById(R.id.lista_battute);
-        listaBattuteTitolo = (TextView) findViewById(R.id.titolo_battute);
+//        listaBattuteTitolo = (TextView) findViewById(R.id.titolo_battute);
         listaBattuteTitolo.setText(autore);
         listaBattuteTitolo.setBackgroundColor(Color.parseColor("#9fe7ff"));
 //        Typeface titleTypeFace = Typeface.createFromAsset(this.getAssets(), "fonts/JosefinSans-Bold.ttf");

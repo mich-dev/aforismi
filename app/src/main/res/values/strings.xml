@@ -8,4 +8,8 @@
     <string name="title_activity_authors_list">AuthorsListActivity</string>
     <string name="title_activity_quotes_list">QuotesListActivity</string>
     <string name="titolo_battute">Aforismi/Battute</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
 </resources>

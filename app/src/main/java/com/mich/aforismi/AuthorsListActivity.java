@@ -32,7 +32,7 @@ public class AuthorsListActivity extends AppCompatActivity implements IBattuteRe
 //        setSupportActionBar(toolbar);
 
         listaAutori = (ListView) findViewById(R.id.lista_autori);
-        listaAutoriTitolo = (TextView) findViewById(R.id.titolo_autori);
+//        listaAutoriTitolo = (TextView) findViewById(R.id.titolo_autori);
         listItems = new ArrayList<>();
 
         choice = (Character) getIntent().getSerializableExtra("scelta");

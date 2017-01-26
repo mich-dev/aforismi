@@ -5,47 +5,62 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.mich.aforismi.MainActivity">
+    tools:context="com.mich.aforismi.MainActivity"
+    tools:showIn="@layout/lista_alfabeto">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/holo_red_dark"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+    </android.support.design.widget.AppBarLayout>
+
 
     <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/parse_html"
         android:id="@+id/html_content"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/parse_html"
         android:textAlignment="center"
         android:textSize="20sp"
-        tools:layout_constraintTop_creator="1"
-        tools:layout_constraintRight_creator="1"
-        app:layout_constraintRight_toRightOf="@+id/listaBattute"
-        android:layout_marginTop="16dp"
-        tools:layout_constraintLeft_creator="1"
         app:layout_constraintLeft_toLeftOf="@+id/listaBattute"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintRight_toRightOf="@+id/listaBattute"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
 
     <ListView
-        android:layout_height="wrap_content"
         android:id="@+id/listaBattute"
-        android:background="#51b3ce"
-        tools:layout_constraintTop_creator="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
-        tools:layout_constraintLeft_creator="1"
+        android:background="#51b3ce"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_width="wrap_content" />
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1" />
 
     <android.support.constraint.Guideline
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/guideline"
-        app:layout_constraintGuide_begin="20dp"
-        android:orientation="horizontal"
-        tools:layout_editor_absoluteY="20dp"
-        tools:layout_editor_absoluteX="0dp" />
-
-    <android.support.constraint.Guideline
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/guideline2"
+        android:orientation="horizontal"
         app:layout_constraintGuide_begin="20dp"
-        android:orientation="vertical" />
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="20dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
 </android.support.constraint.ConstraintLayout>

@@ -1,47 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app2="http://schemas.android.com/apk/res-auto"
+
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="1">
+    android:background="@color/common_signin_btn_dark_text_disabled"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="80dp">
 
-    <TextView
-        android:layout_width="0dp"
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbarlayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text=""
-        android:id="@+id/titolo_alfabeto"
-        android:gravity="center"
-        android:textColor="#232859"
-        android:textSize="30sp"
-        tools:layout_constraintTop_creator="1"
-        tools:layout_constraintRight_creator="1"
-        app2:layout_constraintRight_toRightOf="parent"
-        tools:layout_constraintLeft_creator="1"
-        app2:layout_constraintLeft_toLeftOf="parent"
-        app2:layout_constraintTop_toTopOf="parent" />
+        android:theme="@style/AppTheme.AppBarOverlay">
 
-    <android.support.constraint.Guideline
-        android:layout_width="wrap_content"
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/holo_red_dark"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/guideline3"
-        app2:layout_constraintGuide_begin="20dp"
+        android:background="@android:color/background_dark"
         android:orientation="vertical"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="20dp" />
+        android:weightSum="1"
+        android:layout_marginTop="70dp">
 
-    <ListView
-        android:layout_width="0dp"
-        android:id="@+id/lista_alfabeto"
-        tools:layout_constraintRight_creator="1"
-        app2:layout_constraintRight_toRightOf="parent"
-        tools:layout_constraintLeft_creator="1"
-        app2:layout_constraintLeft_toLeftOf="parent"
-        app2:layout_constraintTop_toBottomOf="@+id/titolo_alfabeto"
-        android:layout_marginTop="8dp"
-        app2:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="16dp"
-        android:layout_height="0dp" />
-</android.support.constraint.ConstraintLayout>
+
+        <ListView
+            android:id="@+id/lista_alfabeto"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:dividerHeight="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintRight_creator="1" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.design.widget.CoordinatorLayout>

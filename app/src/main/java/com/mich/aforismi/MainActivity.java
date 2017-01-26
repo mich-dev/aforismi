@@ -2,7 +2,11 @@ package com.mich.aforismi;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -28,21 +32,35 @@ public class MainActivity extends AppCompatActivity implements IBattuteResponse 
     ArrayAdapter adapter, listaAlfabetoAdapter;
     private String autoreFile = "";
     String[] autoreFileSplit = null;
+    private DrawerLayout mDrawerLayout;
+    private ListView mDrawerList;
+    private String[] menu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)  {
         super.onCreate(savedInstanceState);
 
 //        setContentView(R.layout.activity_main);
-        setContentView(R.layout.lista_alfabeto);
+        setContentView(R.layout.menu_laterale);
 //        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
 
         listaAlfabeto = (ListView) findViewById(R.id.lista_alfabeto);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        toolbar.setSubtitle("Toolbar di prova");
+
+//        menu = getResources().getStringArray(R.array.planets_array);
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, mDrawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        mDrawerLayout.setDrawerListener(toggle);
+        toggle.syncState();
+
 //        parsedHtmlNode = (TextView) findViewById(R.id.html_content);
-        listaAlfabetoTitolo = (TextView) findViewById(R.id.titolo_alfabeto);
-        listaAlfabetoTitolo.setText(getString(R.string.titolo_per_alfabeto));
+//        listaAlfabetoTitolo = (TextView) findViewById(R.id.titolo_alfabeto);
+//        listaAlfabetoTitolo.setText(getString(R.string.titolo_per_alfabeto));
 
 
 /* READ A TXT FILE and extract authors and links
@@ -99,6 +117,15 @@ public class MainActivity extends AppCompatActivity implements IBattuteResponse 
 
     }
 
+    @Override
+    public void onBackPressed() {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -126,5 +153,6 @@ public class MainActivity extends AppCompatActivity implements IBattuteResponse 
 //        Log.d("Numero di battute: ", "" + asyncresult.size());
         list.setAdapter(adapter);
     }
+
 
 }
