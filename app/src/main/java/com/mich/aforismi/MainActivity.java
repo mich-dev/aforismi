@@ -1,18 +1,24 @@
 package com.mich.aforismi;
 
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewStub;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.io.BufferedReader;
@@ -21,7 +27,10 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-import static android.R.id.input;
+//import static com.mich.aforismi.R.id.toolbar;
+
+//import static com.mich.aforismi.R.id.toolbar;
+//import static java.security.AccessController.getContext;
 
 public class MainActivity extends AppCompatActivity implements IBattuteResponse {
 
@@ -35,28 +44,34 @@ public class MainActivity extends AppCompatActivity implements IBattuteResponse 
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     private String[] menu;
+    RelativeLayout alfabeto;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)  {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-//        setContentView(R.layout.activity_main);
         setContentView(R.layout.menu_laterale);
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
 
+        ViewStub stub = (ViewStub) findViewById(R.id.layout_stub);
+        stub.setLayoutResource(R.layout.lista_alfabeto);
+        View inflated = stub.inflate();
+
+//        LinearLayout mContainer = inflater.inflate(R.layout.linear_layout, null);
+//        RelativeLayout relative = inflater.inflate(R.layout.lista_alfabeto, null);
+        alfabeto = (RelativeLayout) findViewById(R.id.alfabeto);
         listaAlfabeto = (ListView) findViewById(R.id.lista_alfabeto);
+//        listaAlfabeto.setBackgroundColor(Color.BLACK);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         toolbar.setSubtitle("Toolbar di prova");
 
-//        menu = getResources().getStringArray(R.array.planets_array);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, mDrawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         mDrawerLayout.setDrawerListener(toggle);
         toggle.syncState();
+
 
 //        parsedHtmlNode = (TextView) findViewById(R.id.html_content);
 //        listaAlfabetoTitolo = (TextView) findViewById(R.id.titolo_alfabeto);
